@@ -46,8 +46,8 @@ class ProductsController < ApplicationController
         format.json { render :show, status: :ok, location: @product }
 
         @product = Product.all
-        ActionCable.server.broadcase 'products',
-        	html: render_to_String('store/index', layout: false)
+        ActionCable.server.broadcast 'products',
+        	html: render_to_string('store/index', layout: false)
       else
         format.html { render :edit }
         format.json { render json: @product.errors, status: :unprocessable_entity }
@@ -85,5 +85,4 @@ class ProductsController < ApplicationController
   		end
   	end
   end
-
 end

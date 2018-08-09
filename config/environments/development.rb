@@ -53,4 +53,18 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   config.action_cable.disable_request_forgery_protection = true
+
+  config.action_mailer.delivery_method = :smtp
+
+  config.action_mailer.smtp_settings = {
+  	address: "miki@ekohe.com",
+  	port: 587,
+  	domain: "domain",
+  	authentication: "plain",
+  	user_name: "miki",
+  	password: "lucky0130",
+  	enable_starttls_auto: true
+  }
+
+
 end
